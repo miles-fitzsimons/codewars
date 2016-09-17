@@ -57,8 +57,7 @@ const MORSE_CODE = {
 };
 
 var decodeMorse = morseCode => {
-  while (morseCode.substring(0,1) === ' ') morseCode = morseCode.substring(1);
-  while (morseCode.substring(morseCode.length - 1) === ' ') morseCode = morseCode.substring(0, morseCode.length - 1);
+  morseCode = morseCode.trim();
   while (morseCode.indexOf('   ') !== -1) {
     morseCode = morseCode.substring(0, morseCode.indexOf('   ')) + ' s ' + morseCode.substring(morseCode.indexOf('   ') + 3);
   }
