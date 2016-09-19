@@ -1,10 +1,7 @@
 var powersOfTwo = n => {
-  var res = [];
-  for (var i = 0; i <= n; i++) {
-    res.push(Math.pow(2, i));
-  }
-  return res;
+  return Array.from({length: n + 1}, (el, i) => {console.log(el, i); return Math.pow(2, i);});
 }
 
-console.log(powersOfTwo(10));
 console.log(powersOfTwo(0));
+console.log(powersOfTwo(1));
+console.log(powersOfTwo(2));
