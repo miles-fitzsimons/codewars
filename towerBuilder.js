@@ -1,16 +1,10 @@
 var towerBuilder = nFloors => {
   var res =[];
-  var width = 2 * (nFloors - 1) + 1;
-  var n = (width - 1) / 2;
+  var n = (2 * (nFloors - 1)) / 2;
   for(var i = 0; i < nFloors; i++) {
     var str = '';
     for (var j = -n; j <= n; j++) {
-      if (j > i || j < -i) {
-        str += ' ';
-      }
-      else {
-        str += '*';
-      }
+      j < -i || j > i ? str += ' ' : str += '*';
     }
     res.push(str);
   }
